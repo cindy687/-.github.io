@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>山坡羊·潼关怀古 | 元曲考点精讲与互动测验</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f3efe5;
+            font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, -apple-system, 'Microsoft YaHei', sans-serif;
+            color: #2c2418;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 头部区域 */
+        .hero {
+            background: linear-gradient(135deg, #2d4a3b, #1f3b2c);
+            color: #fef7e0;
+            padding: 2rem 2rem;
+            border-radius: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 1.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            opacity: 0.85;
+            border-top: 1px solid rgba(255,245,200,0.4);
+            display: inline-block;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero .poem-excerpt {
+            background: rgba(0,0,0,0.25);
+            padding: 0.8rem 1rem;
+            border-radius: 1.5rem;
+            margin-top: 1rem;
+            font-family: 'Courier New', '楷体', monospace;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* 通用分区样式 */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2d4a3b;
+            background: #e7dcc8;
+            display: inline-block;
+            padding: 0.3rem 1.5rem;
+            border-radius: 3rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* 潼关地图模块 */
+        .map-module {
+            background: #fff6ea;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid #e2d8ca;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+        .map-module h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.3rem;
+            color: #2d4a3b;
+            margin-bottom: 1rem;
+            border-left: 5px solid #b97f44;
+            padding-left: 0.8rem;
+        }
+        .map-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .map-svg {
+            background: #fef7e8;
+            border-radius: 1.2rem;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 280px;
+        }
+        .map-description {
+            flex: 1;
+            min-width: 200px;
+            background: #fef5e6;
+            padding: 1rem;
+            border-radius: 1.2rem;
+            line-height: 1.6;
+        }
+        .map-description p {
+            margin-bottom: 0.8rem;
+        }
+        .map-description .highlight {
+            color: #b97f44;
+            font-weight: 600;
+        }
+        .map-svg svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .map-legend {
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #7e6a50;
+        }
+
+        /* 考点导航卡片区 */
+        .knowledge-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .knowledge-card {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2d8ca;
+        }
+        .knowledge-card:hover {
+            transform: translateY(-3px);
+            border-color: #b97f44;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .knowledge-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+        .knowledge-card .title {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #2d4a3b;
+        }
+        .knowledge-card .desc {
+            font-size: 0.7rem;
+            color: #7e6a50;
+            margin-top: 0.3rem;
+        }
+
+        /* 卡片通用样式（题目卡片） */
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            border: 1px solid #e9e0d0;
+            scroll-margin-top: 80px;
+        }
+        .card:hover {
+            box-shadow: 0 12px 22px rgba(0,0,0,0.08);
+        }
+
+        .question-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            border-left: 5px solid #b97f44;
+            padding-left: 1rem;
+        }
+
+        .q-type {
+            background: #e7dcc8;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            color: #4a3724;
+        }
+
+        .q-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #2c4b3a;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            background: #fefaf2;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            border-left: 3px solid #b97f44;
+        }
+
+        .options {
+            margin: 0.8rem 0 1rem 1rem;
+        }
+
+        .option {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: 1.1rem;
+            height: 1.1rem;
+            accent-color: #b97f44;
+        }
+
+        label {
+            font-weight: normal;
+            color: #2c2418;
+        }
+
+        .fill-input {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1px solid #ddd2be;
+            border-radius: 1.2rem;
+            font-size: 0.95rem;
+            background: white;
+            transition: 0.2s;
+            margin: 0.5rem 0;
+        }
+
+        .fill-input:focus {
+            outline: none;
+            border-color: #b97f44;
+            box-shadow: 0 0 0 2px rgba(185,127,68,0.2);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            border: 1px solid #ddd2be;
+            font-family: inherit;
+            font-size: 0.9rem;
+            resize: vertical;
+            background: white;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 0.5rem;
+        }
+
+        button {
+            background: #2d4a3b;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        button:hover {
+            background: #1f3b2c;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #8b6946;
+        }
+
+        .btn-secondary:hover {
+            background: #6e4f30;
+        }
+
+        .feedback {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            background: #f8f2e6;
+            font-size: 0.9rem;
+            border-left: 4px solid #b97f44;
+        }
+
+        .correct-fb {
+            background: #e6f4ea;
+            border-left-color: #2e7d32;
+            color: #1e4620;
+        }
+
+        .wrong-fb {
+            background: #ffeae9;
+            border-left-color: #c62828;
+            color: #8b2c2c;
+        }
+
+        .score-area {
+            background: #e2d9cc;
+            border-radius: 2rem;
+            padding: 1rem 1.8rem;
+            text-align: center;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .score-badge {
+            font-weight: bold;
+            font-size: 1.4rem;
+            background: #2c2418;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 3rem;
+            color: #f5e7ce;
+        }
+
+        .knowledge-tag {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+            justify-content: center;
+        }
+
+        .tag {
+            background: #f0e5d5;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #5a3e28;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #8b765a;
+        }
+
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fffaf0;
+            max-width: 600px;
+            width: 90%;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            position: relative;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+            border-top: 8px solid #b97f44;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .modal-content h3 {
+            font-size: 1.5rem;
+            color: #2d4a3b;
+            margin-bottom: 1rem;
+            border-left: 4px solid #b97f44;
+            padding-left: 0.8rem;
+        }
+        .modal-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #2c2418;
+        }
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #8b6946;
+        }
+        .close-modal:hover {
+            color: #b97f44;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>📜 山坡羊·潼关怀古</h1>
+        <div class="poem-excerpt">
+            峰峦如聚，波涛如怒，山河表里潼关路。<br>
+            望西都，意踌躇。伤心秦汉经行处，宫阙万间都做了土。<br>
+            <strong>兴，百姓苦；亡，百姓苦。</strong>
+        </div>
+        <div class="sub">🎯 元曲考点精讲 + 互动测验</div>
+    </div>
+
+    <!-- ================= 第一部分：潼关地理 ================= -->
+    <div class="section">
+        <div class="section-title">📌 第一部分：潼关地理 · 山河表里</div>
+        <div class="map-module">
+            <h2>🗺️ 潼关 · 山河表里之地</h2>
+            <div class="map-container">
+                <div class="map-svg">
+                    <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 背景 -->
+                        <rect width="500" height="320" fill="#E9E0CD" rx="12" />
+                        <!-- 黄河 (弯曲河流) -->
+                        <path d="M30 180 L100 170 L150 150 L200 140 L260 130 L320 150 L380 170 L450 190" stroke="#4A7A9C" stroke-width="5" fill="none" stroke-linecap="round" />
+                        <text x="40" y="160" fill="#2C5A6E" font-size="10" font-weight="bold">黄河</text>
+                        <!-- 华山山脉 (三角形符号) -->
+                        <polygon points="280,90 310,30 340,90" fill="#8FAA7B" opacity="0.7" stroke="#5D7A42" stroke-width="1.5" />
+                        <polygon points="240,110 270,60 300,110" fill="#8FAA7B" opacity="0.7" stroke="#5D7A42" stroke-width="1.5" />
+                        <polygon points="320,100 350,50 380,100" fill="#8FAA7B" opacity="0.7" stroke="#5D7A42" stroke-width="1.5" />
+                        <text x="310" y="40" fill="#4A6135" font-size="9">华山</text>
+                        <!-- 秦岭示意 (曲线山脉) -->
+                        <path d="M20 220 L80 210 L140 200 L200 190 L270 200 L340 210 L400 220" stroke="#5C7342" stroke-width="3" fill="none" stroke-dasharray="4 2" />
+                        <text x="180" y="210" fill="#5C7342" font-size="9">秦岭</text>
+                        <!-- 潼关位置 (红点 + 标注) -->
+                        <circle cx="210" cy="150" r="8" fill="#B97F44" stroke="#6B3E1A" stroke-width="2" />
+                        <text x="215" y="140" fill="#B97F44" font-weight="bold" font-size="12">⚔️ 潼关</text>
+                        <!-- 关中平原示意 -->
+                        <rect x="50" y="130" width="150" height="60" fill="#DBCA9F" opacity="0.4" stroke="none" />
+                        <text x="70" y="155" fill="#9B7E5C" font-size="9">关中平原</text>
+                        <!-- 洛阳方向箭头 -->
+                        <path d="M430 160 L470 160" stroke="#8B6946" stroke-width="2" marker-end="url(#arrow)" fill="none" />
+                        <text x="440" y="150" fill="#8B6946" font-size="9">洛阳·中原</text>
+                        <defs>
+                            <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                                <polygon points="0 0, 8 4, 0 8" fill="#8B6946" />
+                            </marker>
+                        </defs>
+                        <!-- 长安方向标注 -->
+                        <text x="40" y="120" fill="#8B6946" font-size="10">长安（西安）</text>
+                        <!-- 山脉文字说明 -->
+                        <text x="110" y="280" fill="#7A664C" font-size="8">⚡ 南依秦岭，北临黄河，扼守东西咽喉</text>
+                    </svg>
+                    <div class="map-legend">▲ 山脉 &nbsp; | &nbsp; 🌊 黄河 &nbsp; | &nbsp; 🔴 潼关</div>
+                </div>
+                <div class="map-description">
+                    <p><span class="highlight">📍 地理位置</span>：潼关位于今陕西省渭南市潼关县，北临黄河，南依秦岭，地处关中平原东端，是连接中原与关中的咽喉要道。</p>
+                    <p><span class="highlight">🏔️ “山河表里”</span>：张养浩所谓“山河表里潼关路”，正是描绘潼关外有黄河天险、内有华山屏障的险要地形。古人云“关门扼九州”，此处一夫当关，万夫莫开。</p>
+                    <p><span class="highlight">⚔️ 兵家必争之地</span>：自秦汉至明清，潼关发生大小战役数十次，是决定王朝兴衰的关键节点。曹操与马超之战、安史之乱中哥舒翰失守潼关、李自成潼关南原大战……无数历史转折在此上演。</p>
+                    <p><span class="highlight">📜 与《潼关怀古》的呼应</span>：张养浩途经此地，面对险关与废墟，感怀历代兴亡皆以百姓为代价，写下千古绝唱。正是潼关特殊的地理意义，激发了他对历史与民生的深刻反思。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 第二部分：核心考点精讲 ================= -->
+    <div class="section">
+        <div class="section-title">📖 第二部分：核心考点精讲（点击卡片查看详解）</div>
+        <div class="knowledge-nav" id="knowledgeNav">
+            <div class="knowledge-card" data-topic="refine">
+                <div class="icon">✍️</div>
+                <div class="title">炼字赏析</div>
+                <div class="desc">品味“聚”“怒”“踌躇”等字词的表现力</div>
+            </div>
+            <div class="knowledge-card" data-topic="theme">
+                <div class="icon">💡</div>
+                <div class="title">主旨思辨</div>
+                <div class="desc">深入探讨“兴，百姓苦；亡，百姓苦”的历史观</div>
+            </div>
+            <div class="knowledge-card" data-topic="history">
+                <div class="icon">🏛️</div>
+                <div class="title">历史文化背景</div>
+                <div class="desc">张养浩生平、潼关地理、元代社会</div>
+            </div>
+            <div class="knowledge-card" data-topic="art">
+                <div class="icon">🎨</div>
+                <div class="title">艺术手法</div>
+                <div class="desc">拟人、对比、虚实结合、以小见大</div>
+            </div>
+            <div class="knowledge-card" data-topic="modern">
+                <div class="icon">🌍</div>
+                <div class="title">现实意义分析</div>
+                <div class="desc">跨越古今的人文关怀与当代启示</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 第三部分：知识测验 ================= -->
+    <div class="section">
+        <div class="section-title">✍️ 第三部分：知识测验 · 巩固提升</div>
+        <div id="questionsContainer"></div>
+        <div class="score-area" id="scorePanel" style="display: none;">
+            <span>📊 客观题掌握程度</span>
+            <span class="score-badge" id="scoreDisplay">0 / 0</span>
+            <button id="resetBtn" class="btn-secondary">⟳ 重做所有题目</button>
+        </div>
+        <div class="knowledge-tag">
+            <span class="tag">🏷️ 炼字赏析</span>
+            <span class="tag">🏷️ 主旨思辨</span>
+            <span class="tag">🏷️ 历史文化背景</span>
+            <span class="tag">🏷️ 艺术手法</span>
+            <span class="tag">🏷️ 现实意义分析</span>
+        </div>
+    </div>
+
+    <footer>💡 点击考点卡片查看详细讲解 · 完成下方题目巩固所学</footer>
+</div>
+
+<!-- 模态框（讲解内容） -->
+<div id="explainModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<script>
+    // ---------- 全元曲讲解内容 + 现实意义分析（统一为模态框形式）----------
+    const knowledgeContent = {
+        refine: {
+            title: "✍️ 炼字赏析 · 全元曲视野",
+            content: `<p>元曲语言本色当行，擅于以寻常字眼锻造奇崛意境。张养浩《山坡羊·潼关怀古》开篇“聚”“怒”二字，便体现了元曲“重精神、轻雕琢”的炼字特点。</p>
+            <p>🔹 <strong>“聚”</strong>：写峰峦如怒涛般向潼关汇聚，既状山势之险，又暗含历史风云在此集结，赋予静态山岭以动态压迫感。元曲中常用此类拟人化炼字（如关汉卿“碧云天，黄花地”），使景物承载情感。</p>
+            <p>🔹 <strong>“怒”</strong>：黄河波涛咆哮，一个“怒”字不仅写水势凶猛，更投射出作者对历代百姓苦难的悲愤。元散曲中“怒”常与民生疾苦关联，如刘时中《上高监司》“那堪这饥馑，更逢着凶岁，使人愁，使人怒”。</p>
+            <p>🔹 <strong>“踌躇”</strong>：全曲唯一直接写人物心理的词语，双声叠韵，音律舒缓，与前面急促的“聚”“怒”形成节奏对比，透出作者在历史废墟前的沉思——这正是元曲“于豪放中见深沉”的典型笔法。</p>
+            <p>📖 延伸：元曲炼字追求“极情尽致”，不避俚俗，但求传神。张养浩此曲将炼字与史识完美融合，堪称典范。</p>`
+        },
+        theme: {
+            title: "💡 主旨思辨 · 全元曲的批判精神",
+            content: `<p>“兴，百姓苦；亡，百姓苦”是整首曲子的灵魂，也是元曲中罕见的深刻历史洞见。这一主题在全元曲中并非孤例，而是元代文人群体对历史与现实的集体反思。</p>
+            <p>🔹 <strong>元代社会背景</strong>：元朝阶级矛盾尖锐，百姓负担沉重。张养浩身为汉人官僚，亲历官场黑暗与民间疾苦，晚年赈灾途中写下此曲，将批判矛头直指一切王朝兴替。</p>
+            <p>🔹 <strong>元曲中的“百姓苦”书写</strong>：与唐诗宋词多抒发个人失意不同，元散曲常以底层视角控诉社会不公。如睢景臣《哨遍·高祖还乡》解构帝王威严，刘时中《上高监司》直书灾荒惨状。张养浩则上升到历史哲学高度，揭示了“兴亡皆苦”的普遍性。</p>
+            <p>🔹 <strong>思辨价值</strong>：此句打破了传统“盛世赞歌”的叙事，体现民本思想与历史循环论的突破。在元曲中，这种“以百姓为尺度”的历史观，标志着中国文学人道主义精神的深化。</p>
+            <p>📖 延伸：对比苏轼《念奴娇·赤壁怀古》的个体渺小感，张养浩更关注群体命运，体现了元曲“尚俗”而“重民”的特质。</p>`
+        },
+        history: {
+            title: "🏛️ 历史文化背景 · 张养浩与元曲的时代",
+            content: `<p><strong>张养浩（1270-1329）</strong>：字希孟，号云庄，济南人。元代著名散曲家、政治家。他历经元世祖至英宗数朝，为官清廉，直言敢谏，后因宦海险恶辞官归隐。天历二年（1329年），关中大旱，他临危受命出任陕西行台中丞，散尽家财赈灾，积劳成疾，逝于任上。《山坡羊·潼关怀古》即写于赴任途中。</p>
+            <p><strong>元代社会与元曲</strong>：元代是第一个由少数民族统治的全国性政权，科举中断，文人地位下降，许多士人转向杂剧、散曲创作。元曲（包括杂剧和散曲）成为反映社会矛盾、抒发愤懑的利器。张养浩的散曲既有传统士大夫的忧患意识，又吸收了民间俚语，风格豪放中见沉郁。</p>
+            <p><strong>潼关的历史意义</strong>：潼关自古为兵家必争之地，秦汉隋唐，无数战争在此发生。张养浩“山河表里潼关路”一句，将地理险要与历史悲剧联结，正是元代文人“借古讽今”的典型手法。</p>
+            <p>📖 延伸：元代文人的历史怀古之作，常将个体命运融入王朝兴衰，如卢挚《沉醉东风·秋景》、马致远《蟾宫曲·叹世》，皆可见张养浩式悲慨。</p>`
+        },
+        art: {
+            title: "🎨 艺术手法 · 元散曲的典型技法",
+            content: `<p>《山坡羊·潼关怀古》集中体现了元散曲“以俗为雅，以景寓情，虚实相生”的艺术特色。</p>
+            <p>🔹 <strong>拟人化意象</strong>：“峰峦如聚，波涛如怒”以拟人手法赋予山河情感，将静态画面动态化、情绪化，开创了怀古词曲中“景物参与叙事”的新范式。</p>
+            <p>🔹 <strong>对比与虚实结合</strong>：“宫阙万间”是昔日繁华的虚写（回忆），“做了土”是眼前荒芜的实景，虚实对照中凸显历史沧桑。元曲常用此类对比（如“旧时王谢堂前燕，飞入寻常百姓家”），但张养浩更进一步，将对比引向“兴亡皆苦”的哲理。</p>
+            <p>🔹 <strong>层层递进的结构</strong>：全曲由景（潼关险要）入情（望西都踌躇），再由情入理（兴亡百姓苦），形成“写景—抒情—议论”的三段式，这是元散曲小令的典型章法。</p>
+            <p>🔹 <strong>本色语言与深刻立意</strong>：全曲无生僻字，却字字千钧。末句“兴，百姓苦；亡，百姓苦”以对仗句式、直白口语道出千古真理，体现了元曲“不隐恶，不溢美”的写实精神。</p>
+            <p>📖 延伸：对比唐诗怀古（如李商隐《贾生》）的含蓄，元曲更显直切；对比宋词怀古（如辛弃疾《永遇乐》）的雄豪，元曲更重民生视角。</p>`
+        },
+        modern: {
+            title: "🌍 现实意义分析 · 跨越古今的人文关怀",
+            content: `<p><strong>“兴，百姓苦；亡，百姓苦”</strong>——张养浩在七百年前发出的浩叹，至今仍振聋发聩。它超越了具体朝代，直指权力更迭与普通民众命运之间的永恒张力。在当代社会，这一思想至少有三重启示：</p>
+            <p><strong>🔹 以人为本的发展观</strong><br>任何宏大的国家叙事、经济建设或历史功业，最终都应落脚于百姓的福祉。发展若以牺牲民众根本利益为代价，便背离了文明的初心。今日我们强调“以人民为中心”，正是对这种历史智慧的继承与超越。</p>
+            <p><strong>🔹 对历史悲剧的警醒</strong><br>人类历史上无数“盛世”背后都饱含着底层民众的血汗。张养浩提醒我们：评价一个时代，不能只看宫殿的高度，更要看百姓的温度。当今社会，我们当警惕任何忽视民生疾苦的“繁荣”，始终将人的尊严与幸福置于首位。</p>
+            <p><strong>🔹 知识分子的良知与担当</strong><br>张养浩以垂暮之身奔赴灾荒之地，用文字为百姓立言。他的选择启示当代人——无论身处何种岗位，都应有“为生民立命”的自觉，敢于为弱势群体发声，以专业知识与社会责任感推动公平正义。</p>
+            <p><strong>🔹 历史观与公民意识</strong><br>这首元曲也启发我们以更清醒的眼光看待历史变迁。普通人不再是宏大叙事的沉默背景，而是历史评价的最终尺度。在信息时代，我们每个人都可以成为“张养浩”，关注那些被忽略的声音，让“百姓苦”不再被遗忘。</p>
+            <p>📖 总结：《山坡羊·潼关怀古》不仅是文学经典，更是一面映照古今的明镜。它提醒我们：只有把“百姓苦”永远放在心上，历史的兴亡才不会沦为冰冷的轮回，文明才能真正走向人的全面解放。</p>`
+        }
+    };
+
+    // ---------- 题库（保留6道题目，覆盖炼字、背景、主旨、艺术手法）----------
+    const questionsData = [
+        { // 0: 炼字赏析 + 艺术手法
+            id: 0,
+            type: "choice",
+            typeName: "✏️ 选择题",
+            text: "“峰峦如聚，波涛如怒”一句中，“聚”和“怒”二字运用了哪种修辞手法，并起到了怎样的表达效果？",
+            options: [
+                "A. 比喻，生动写出山河的壮丽优美",
+                "B. 对偶，强调潼关地势平坦开阔",
+                "C. 拟人，赋予山河以人的情感，既写出潼关地势险要，又暗示了历史风云的激荡",
+                "D. 夸张，突出黄河水势凶猛，与历史无关"
+            ],
+            correct: "C",
+            explanation: "“聚”写山峦仿佛有意识地向潼关聚集，“怒”写波涛像愤怒般咆哮，运用拟人手法，既勾勒出险要地势，又渲染了历史波涛汹涌、朝代更迭的悲愤氛围。",
+            knowledge: "炼字赏析 & 艺术手法"
+        },
+        { // 1: 历史文化背景 (地理)
+            id: 1,
+            type: "truefalse",
+            typeName: "✅ 判断题",
+            text: "“山河表里潼关路”中“表里”指内外，形容潼关一带外有黄河、内有华山，地势险要，是兵家必争之地。",
+            correct: true,
+            explanation: "正确。“山河表里”出自《左传》，此处形容潼关依山傍河，形势险固，也暗示了历代在此地发生的战争与苦难。",
+            knowledge: "历史文化背景"
+        },
+        { // 2: 主旨思辨 (简答题)
+            id: 2,
+            type: "essay",
+            typeName: "💬 简答题",
+            text: "为什么说“兴，百姓苦；亡，百姓苦”？请结合本曲与历史背景，谈谈你对这句千古名句的理解。（100字左右）",
+            modelAnswer: "朝代“兴”时，大兴土木、征战四方，百姓负担沉重；“亡”时战乱频仍，生灵涂炭。张养浩跳出王朝循环，指出无论兴亡，百姓始终是苦难的承受者，体现了深沉的民本思想与历史批判精神。",
+            knowledge: "主旨思辨"
+        },
+        { // 3: 历史文化背景 (作者境遇)
+            id: 3,
+            type: "choice",
+            typeName: "✏️ 选择题",
+            text: "张养浩写作《山坡羊·潼关怀古》时，正处于什么境况？这对作品的情感有何影响？",
+            options: [
+                "A. 年少及第，意气风发，赞美山河",
+                "B. 辞官归隐后闲适游玩，借古抒怀",
+                "C. 临危受命担任陕西行台中丞，赈灾途中目睹民生疾苦，触景生情",
+                "D. 贬官途中，抒发怀才不遇"
+            ],
+            correct: "C",
+            explanation: "张养浩晚年散尽家财，赴关中赈灾，路过潼关感慨历史与当下，将百姓苦难置于兴亡之上。他不久因积劳成疾去世，此曲可谓血泪之作。",
+            knowledge: "历史文化背景"
+        },
+        { // 4: 炼字赏析 (情感)
+            id: 4,
+            type: "fill",
+            typeName: "📝 填空题",
+            text: "“望西都，意踌躇”中的“踌躇”一词，表现了作者怎样的心理状态？（用两个词概括）",
+            correctAnswer: "犹豫 悲愤",
+            alternatives: ["犹豫不决 伤感", "徘徊 悲伤", "踌躇 伤心", "犹豫 沉痛", "徘徊 感慨"],
+            explanation: "“踌躇”既有对历史兴亡的沉思，也有对百姓悲惨命运的揪心，表现出诗人徘徊感慨、内心沉痛的状态。",
+            knowledge: "炼字赏析"
+        },
+        { // 5: 艺术手法 (对比与虚实结合)
+            id: 5,
+            type: "choice",
+            typeName: "🎨 选择题",
+            text: "“宫阙万间都做了土”与“兴，百姓苦；亡，百姓苦”在表现手法上主要运用了哪种艺术手法？",
+            options: [
+                "A. 动静结合，以动衬静",
+                "B. 对比与虚实结合，将昔日繁华与今日荒芜对比，并由实入虚揭示百姓苦难",
+                "C. 直抒胸臆，毫无修饰",
+                "D. 托物言志，借潼关景物表达归隐之志"
+            ],
+            correct: "B",
+            explanation: "“宫阙万间”是昔日繁华的虚写（或追忆），“做了土”是眼前实景，虚实对比强烈；进而由历史的兴废引出“兴亡百姓苦”的深刻论断，以小见大，对比鲜明。",
+            knowledge: "艺术手法"
+        }
+    ];
+
+    let userAnswers = {
+        0: null,
+        1: null,
+        2: "",
+        3: null,
+        4: "",
+        5: null
+    };
+
+    let scoreStatus = {};
+
+    // 渲染题目
+    function renderQuestions() {
+        const container = document.getElementById('questionsContainer');
+        if (!container) return;
+        container.innerHTML = '';
+        questionsData.forEach((q, idx) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.id = `card-${idx}`;
+            const headerDiv = document.createElement('div');
+            headerDiv.className = 'question-header';
+            headerDiv.innerHTML = `
+                <span class="q-type">${q.typeName}</span>
+                <span class="q-title">问题 ${idx+1}</span>
+                <span style="font-size:0.75rem; color:#8b6946; margin-left:auto;">📚 ${q.knowledge}</span>
+            `;
+            card.appendChild(headerDiv);
+
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question-text';
+            questionDiv.innerText = q.text;
+            card.appendChild(questionDiv);
+
+            let inputArea = document.createElement('div');
+            inputArea.className = 'input-area';
+            
+            if (q.type === 'choice') {
+                const optsDiv = document.createElement('div');
+                optsDiv.className = 'options';
+                q.options.forEach(opt => {
+                    const optId = `q${idx}_${opt.charAt(0)}`;
+                    const radio = document.createElement('input');
+                    radio.type = 'radio';
+                    radio.name = `choice_${idx}`;
+                    radio.value = opt.charAt(0);
+                    radio.id = optId;
+                    if (userAnswers[idx] === opt.charAt(0)) radio.checked = true;
+                    radio.addEventListener('change', (e) => {
+                        userAnswers[idx] = e.target.value;
+                        const fbDiv = card.querySelector('.feedback');
+                        if (fbDiv) fbDiv.remove();
+                    });
+                    const label = document.createElement('label');
+                    label.htmlFor = optId;
+                    label.innerText = opt;
+                    const wrap = document.createElement('div');
+                    wrap.className = 'option';
+                    wrap.appendChild(radio);
+                    wrap.appendChild(label);
+                    optsDiv.appendChild(wrap);
+                });
+                inputArea.appendChild(optsDiv);
+            } 
+            else if (q.type === 'fill') {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'fill-input';
+                input.placeholder = '请输入答案...';
+                input.value = userAnswers[idx] || '';
+                input.addEventListener('input', (e) => {
+                    userAnswers[idx] = e.target.value.trim();
+                });
+                inputArea.appendChild(input);
+            }
+            else if (q.type === 'truefalse') {
+                const optsDiv = document.createElement('div');
+                optsDiv.className = 'options';
+                const trueId = `tf_true_${idx}`;
+                const falseId = `tf_false_${idx}`;
+                const trueRadio = document.createElement('input');
+                trueRadio.type = 'radio';
+                trueRadio.name = `tf_${idx}`;
+                trueRadio.value = 'true';
+                trueRadio.id = trueId;
+                if (userAnswers[idx] === true) trueRadio.checked = true;
+                trueRadio.addEventListener('change', () => { userAnswers[idx] = true; });
+                const trueLabel = document.createElement('label');
+                trueLabel.htmlFor = trueId;
+                trueLabel.innerText = '✅ 正确';
+                const falseRadio = document.createElement('input');
+                falseRadio.type = 'radio';
+                falseRadio.name = `tf_${idx}`;
+                falseRadio.value = 'false';
+                falseRadio.id = falseId;
+                if (userAnswers[idx] === false) falseRadio.checked = true;
+                falseRadio.addEventListener('change', () => { userAnswers[idx] = false; });
+                const falseLabel = document.createElement('label');
+                falseLabel.htmlFor = falseId;
+                falseLabel.innerText = '❌ 错误';
+                
+                const wrap1 = document.createElement('div'); wrap1.className = 'option'; wrap1.appendChild(trueRadio); wrap1.appendChild(trueLabel);
+                const wrap2 = document.createElement('div'); wrap2.className = 'option'; wrap2.appendChild(falseRadio); wrap2.appendChild(falseLabel);
+                optsDiv.appendChild(wrap1); optsDiv.appendChild(wrap2);
+                inputArea.appendChild(optsDiv);
+            }
+            else if (q.type === 'essay') {
+                const textarea = document.createElement('textarea');
+                textarea.rows = 4;
+                textarea.placeholder = '请在此写下你的理解...';
+                textarea.value = userAnswers[idx] || '';
+                textarea.addEventListener('input', (e) => {
+                    userAnswers[idx] = e.target.value;
+                });
+                inputArea.appendChild(textarea);
+                const refBtn = document.createElement('button');
+                refBtn.innerText = '📖 查看参考答案';
+                refBtn.style.backgroundColor = '#c2a070';
+                refBtn.style.marginTop = '0.8rem';
+                refBtn.style.fontSize = '0.75rem';
+                refBtn.type = 'button';
+                refBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    alert(`✨ 参考答案要点：\n${q.modelAnswer}`);
+                });
+                inputArea.appendChild(refBtn);
+            }
+            
+            card.appendChild(inputArea);
+            
+            const feedbackDiv = document.createElement('div');
+            feedbackDiv.className = 'feedback';
+            feedbackDiv.id = `fb-${idx}`;
+            feedbackDiv.style.display = 'none';
+            card.appendChild(feedbackDiv);
+            
+            if (q.type === 'essay') {
+                const hint = document.createElement('div');
+                hint.style.fontSize = '0.7rem';
+                hint.style.color = '#9b7c5c';
+                hint.style.marginTop = '0.5rem';
+                hint.innerText = '✍️ 简答题可点击上方“查看参考答案”对比，自行判断理解深度。';
+                card.appendChild(hint);
+            }
+            
+            container.appendChild(card);
+        });
+    }
+
+    function isFillCorrect(userAns, correctAns, alternatives = []) {
+        if (!userAns) return false;
+        const normalized = userAns.trim().toLowerCase().replace(/[，,。？！\s]/g, '');
+        const allValid = [correctAns, ...(alternatives || [])].map(s => s.trim().toLowerCase().replace(/[，,。？！\s]/g, ''));
+        return allValid.some(valid => normalized === valid || (valid.length > 2 && normalized.includes(valid)));
+    }
+
+    function evaluateAll() {
+        let totalScore = 0;
+        const objectiveQuestions = questionsData.filter(q => q.type !== 'essay');
+        const totalObjective = objectiveQuestions.length;
+        
+        for (let i = 0; i < questionsData.length; i++) {
+            const q = questionsData[i];
+            let isCorrect = false;
+            let userVal = userAnswers[i];
+            let explanationText = q.explanation || '';
+            
+            if (q.type === 'choice') {
+                if (userVal && userVal === q.correct) isCorrect = true;
+            } 
+            else if (q.type === 'fill') {
+                const correctAns = q.correctAnswer;
+                const alts = q.alternatives || [];
+                isCorrect = isFillCorrect(userVal, correctAns, alts);
+            }
+            else if (q.type === 'truefalse') {
+                if (userVal !== undefined && userVal !== null && userVal === q.correct) isCorrect = true;
+            }
+            else if (q.type === 'essay') {
+                isCorrect = null;
+            }
+            
+            if (q.type !== 'essay') {
+                if (isCorrect) totalScore += 1;
+                scoreStatus[i] = isCorrect;
+            } else {
+                scoreStatus[i] = 'essay';
+            }
+            
+            const fbDiv = document.getElementById(`fb-${i}`);
+            if (fbDiv) {
+                fbDiv.style.display = 'block';
+                if (q.type === 'essay') {
+                    fbDiv.innerHTML = `<strong>📌 主观题参考思路（考点：${q.knowledge}）</strong><br>${q.modelAnswer}<br><span style="font-size:0.8rem;">💡 请对比自己的答案，思考是否触及“百姓苦难的永恒性”及对兴亡本质的批判。</span>`;
+                    fbDiv.className = 'feedback';
+                } 
+                else {
+                    if (isCorrect) {
+                        fbDiv.innerHTML = `<strong>✅ 回答正确！【${q.knowledge}】</strong><br>${explanationText}`;
+                        fbDiv.className = 'feedback correct-fb';
+                    } else {
+                        let correctShow = '';
+                        if (q.type === 'choice') correctShow = `正确答案：${q.correct}`;
+                        if (q.type === 'fill') correctShow = `参考答案：${q.correctAnswer}`;
+                        if (q.type === 'truefalse') correctShow = `正确答案：${q.correct ? '正确' : '错误'}`;
+                        fbDiv.innerHTML = `<strong>❌ 回答错误 【${q.knowledge}】</strong><br>${correctShow}<br>📖 解析：${explanationText}`;
+                        fbDiv.className = 'feedback wrong-fb';
+                    }
+                }
+            }
+        }
+        
+        const scorePanel = document.getElementById('scorePanel');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        if (scorePanel) scorePanel.style.display = 'flex';
+        if (scoreDisplay) {
+            scoreDisplay.innerText = `${totalScore} / ${totalObjective}`;
+        }
+        
+        let summaryMsg = document.getElementById('summaryMsg');
+        if (!summaryMsg) {
+            const sumDiv = document.createElement('div');
+            sumDiv.id = 'summaryMsg';
+            sumDiv.style.marginTop = '1rem';
+            sumDiv.style.textAlign = 'center';
+            sumDiv.style.fontSize = '0.85rem';
+            sumDiv.style.color = '#5d4a32';
+            document.getElementById('questionsContainer')?.after(sumDiv);
+            summaryMsg = sumDiv;
+        }
+        if (totalObjective > 0 && totalScore === totalObjective) {
+            summaryMsg.innerHTML = '🎉 完美！考点掌握扎实，再结合“现实意义分析”卡片深化思考，收获会更多。';
+        } else if (totalScore >= totalObjective-1) {
+            summaryMsg.innerHTML = '👍 不错，再巩固一下错题，并点击现实意义卡片拓展视野。';
+        } else {
+            summaryMsg.innerHTML = '📚 建议先点击上方卡片学习元曲背景与现实意义，再重做题目，效果更佳。';
+        }
+    }
+    
+    function resetAll() {
+        for (let i = 0; i < questionsData.length; i++) {
+            if (questionsData[i].type === 'choice') userAnswers[i] = null;
+            else if (questionsData[i].type === 'fill') userAnswers[i] = "";
+            else if (questionsData[i].type === 'truefalse') userAnswers[i] = null;
+            else if (questionsData[i].type === 'essay') userAnswers[i] = "";
+        }
+        renderQuestions();
+        const scorePanel = document.getElementById('scorePanel');
+        if (scorePanel) scorePanel.style.display = 'none';
+        const summaryMsg = document.getElementById('summaryMsg');
+        if (summaryMsg) summaryMsg.innerHTML = '';
+        for (let i = 0; i < questionsData.length; i++) {
+            const fb = document.getElementById(`fb-${i}`);
+            if (fb) fb.style.display = 'none';
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function addGlobalControls() {
+        const container = document.getElementById('questionsContainer');
+        if (!container) return;
+        const controlDiv = document.createElement('div');
+        controlDiv.style.display = 'flex';
+        controlDiv.style.justifyContent = 'center';
+        controlDiv.style.gap = '1rem';
+        controlDiv.style.margin = '1rem 0 0.5rem';
+        const submitBtn = document.createElement('button');
+        submitBtn.innerText = '📋 核对全部答案';
+        submitBtn.style.background = '#b97f44';
+        submitBtn.style.padding = '0.7rem 1.8rem';
+        submitBtn.style.fontSize = '1rem';
+        submitBtn.addEventListener('click', () => evaluateAll());
+        const resetBtn = document.createElement('button');
+        resetBtn.innerText = '🔄 重置所有答案';
+        resetBtn.className = 'btn-secondary';
+        resetBtn.addEventListener('click', () => resetAll());
+        controlDiv.appendChild(submitBtn);
+        controlDiv.appendChild(resetBtn);
+        container.parentNode?.insertBefore(controlDiv, container.nextSibling);
+    }
+    
+    // 模态框控制
+    function showModal(topic) {
+        const modal = document.getElementById('explainModal');
+        const modalContentDiv = document.getElementById('modalContent');
+        if (!modal || !modalContentDiv) return;
+        const content = knowledgeContent[topic];
+        if (!content) return;
+        modalContentDiv.innerHTML = `<h3>${content.title}</h3>${content.content}`;
+        modal.style.display = 'flex';
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById('explainModal');
+        if (modal) modal.style.display = 'none';
+    }
+    
+    // 绑定卡片点击事件（讲解）
+    function setupKnowledgeCards() {
+        const cards = document.querySelectorAll('.knowledge-card');
+        cards.forEach(card => {
+            const topic = card.getAttribute('data-topic');
+            if (!topic) return;
+            card.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showModal(topic);
+            });
+        });
+        // 模态框关闭事件
+        const modal = document.getElementById('explainModal');
+        const closeSpan = document.querySelector('.close-modal');
+        if (modal && closeSpan) {
+            closeSpan.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+    }
+    
+    function init() {
+        renderQuestions();
+        addGlobalControls();
+        setupKnowledgeCards();
+        const scorePanel = document.getElementById('scorePanel');
+        if (scorePanel) scorePanel.style.display = 'none';
+        const resetPanelBtn = document.getElementById('resetBtn');
+        if (resetPanelBtn) resetPanelBtn.addEventListener('click', () => resetAll());
+    }
+    
+    init();
+</script>
+</body>
+</html>
